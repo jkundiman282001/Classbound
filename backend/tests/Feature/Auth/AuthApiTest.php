@@ -85,4 +85,23 @@ class AuthApiTest extends TestCase
 
         $this->assertDatabaseCount('personal_access_tokens', 0);
     }
+
+    public function test_authenticated_user_can_fetch_dashboard_summary(): void
+    {
+        $user = User::factory()->create([
+            'name' => 'Japheth',
+            'email' => 'japheth@example.com',
+        ]);
+
+        Sanctum::actingAs($user);
+
+        $response = $this->getJson('/api/auth/dashboard');
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('profile.name', 'Japheth')
+            ->assertJsonPath('profile.email', 'japheth@example.com')
+            ->assertJsonPath('progress.classes_started', 0)
+            ->assertJsonPath('rewards.badges_unlocked', 0);
+    }
 }
