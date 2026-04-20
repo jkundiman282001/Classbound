@@ -1,0 +1,137 @@
+.app-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 56px 0 72px;
+}
+
+.hero-panel,
+.info-panel {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hero-panel {
+  padding: 56px;
+  border-radius: 28px 28px 12px 12px;
+}
+
+.info-panel {
+  margin-top: 20px;
+  padding: 32px;
+  border-radius: 12px 12px 28px 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.eyebrow,
+.label,
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+}
+
+.lede {
+  max-width: 52rem;
+  font-size: 1.125rem;
+  color: var(--text-soft);
+}
+
+.status-grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.status-grid article,
+.info-panel > div {
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 24px;
+  background: var(--card);
+}
+
+.status-grid strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-strong);
+  font-size: 1.15rem;
+}
+
+.status-grid p,
+.info-panel p,
+.info-panel li {
+  color: var(--text-soft);
+}
+
+.section-title {
+  margin: 0 0 18px;
+}
+
+.endpoint-list,
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.endpoint-list li,
+.checklist li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.endpoint-list li:first-child,
+.checklist li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.endpoint-list span {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.endpoint-list code {
+  font-size: 0.875rem;
+}
+
+.checklist li::before {
+  content: '•';
+  color: var(--accent);
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    width: min(100% - 24px, 1120px);
+    padding: 24px 0 40px;
+  }
+
+  .hero-panel,
+  .info-panel {
+    padding: 24px;
+  }
+
+  .status-grid,
+  .info-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .endpoint-list li,
+  .checklist li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
