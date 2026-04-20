@@ -44,6 +44,44 @@
   color: var(--text-soft);
 }
 
+.connection-banner {
+  margin-top: 28px;
+  padding: 20px 22px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 248, 238, 0.92), rgba(248, 238, 225, 0.92));
+}
+
+.connection-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.connection-pill--loading {
+  color: #7a531f;
+  background: rgba(216, 157, 76, 0.14);
+}
+
+.connection-pill--success {
+  color: #21543b;
+  background: rgba(66, 153, 110, 0.16);
+}
+
+.connection-pill--error {
+  color: #7b2e2e;
+  background: rgba(191, 90, 43, 0.15);
+}
+
+.connection-copy {
+  margin-top: 10px;
+}
+
 .status-grid {
   margin-top: 36px;
   display: grid;
